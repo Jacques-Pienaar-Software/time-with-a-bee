@@ -1,0 +1,168 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+h2 {
+  text-decoration: underline;
+  text-decoration-color: gold;
+  margin-bottom: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh;
+}
+
+.center {
+  text-align: center;
+}
+
+.pink {
+  text-decoration-color: rgb(255, 76, 106);
+}
+
+.subheading {
+  font-size: 20px;
+}
+
+p {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+
+button {
+  position: absolute;
+  height: 40px;
+  padding: 20px;
+  padding-bottom: 50px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  border: 6px solid black;
+  border-radius: 6px;
+  background-color: gold;
+  font-size: 20px;
+  bottom: 26vh;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  justify-self: center;
+  padding: 20px;
+}
+
+.photo-card {
+  --s: 10px;
+  padding: var(--s);
+  border: calc(2 * var(--s)) solid #0000;
+  outline: 1px solid #000;
+  outline-offset: calc(-1 * var(--s));
+  background: conic-gradient(from 90deg at 1px 1px, #0000 25%, #000 0);
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-card p {
+  padding: 16px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Bee Styling */
+.bee-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bee {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  font-size: 20px;
+}
+
+/* Trail Styling */
+.trail {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgb(255, 217, 0);
+  border-radius: 50%;
+  opacity: 1;
+  animation: fadeOut 2s forwards;
+}
+
+.p-10 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .photo-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .photo-card p {
+    font-size: 16px;
+  }
+
+  .bee {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-card p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) {
+  .photo-card {
+    width: 30vw;
+  }
+}
